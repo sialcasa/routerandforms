@@ -1,0 +1,17 @@
+<form #form="ngForm" [formGroup]="transForm" (ngSubmit) = "onSubmit(form.value)">
+  <p>
+    <label>Inhaber </label>
+    <input type="text" formControlName = "name"/>
+  </p>
+  <fieldset formGroupName="kontodaten">
+    <p>
+      <label>Iban </label>
+      <input type="text" formControlName = "iban"/>
+    </p>
+    <p>
+      <label >Bic </label>
+      <input type="text" formControlName = "bic"/>
+    </p>
+  </fieldset>
+  <button type="submit" [disabled]="!form.valid">Ok</button>
+</form>
